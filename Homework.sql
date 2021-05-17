@@ -39,7 +39,7 @@ Name varchar(30) not null ,
 Price decimal(11,2) not null,
 Unit varchar(30) not null,
 PhotoPath varchar(255),
-VendorId int Foreign Key References Vendors(Id)); 
+VendorId int not null Foreign Key References  Vendors(Id)); 
 
 
 Create Table Requests( 
@@ -85,10 +85,15 @@ Insert into Products( PartNbr, Name, Price, Unit, VendorId)
 		  ('HACK', 'Microsoft Hackers Net', 500, 1, (Select id from Vendors where code ='MSFT'));
 
 
-			
-		  select v.Name, Address, City, State, Price, Unit, (Price * Unit) 'Sale Price' from Vendors v
-		  join Products p on v.Id=p.VendorId		
+			Select * from Vendors v
+		   join Products p on v.Id=p.VendorId		
 		  
+		  -- Insert product where vendor ID is null.. change to not null!!
+
+		  Insert Products ( PartNbr, Name, Price, Unit)
+		  Values('Echo1', 'Echo Test', 100,1)
+
+		  select * from Products
 
 
 );

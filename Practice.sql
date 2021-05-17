@@ -16,6 +16,7 @@ order by GPA Desc
 
 -- list of students lastname and Major who live in Michigan.. students Null listed as undeclared 
 
+/*
 select Lastname, ISNULL(m.description, 'Undeclared') as 'Major' 
 From Student s
 Left Join Major m on m.Id = s.MajorId
@@ -25,10 +26,30 @@ select *
 from Major
 
 
+	Insert Student (Firstname, Lastname, StateCode, SAT, GPA, MajorId)
+	Values ('Noah', 'Pense', 'GA', 1235, 3.15, (Select id from Major where Description = 'MATH'))
 
-
-
+	Select * from Student
 
 
 
 -- list of students lastname and Major who live in Michigan.. students Null listed as undeclared 
+*/
+
+
+
+use Master;
+Create Database BcDB;
+Use BcDB;
+
+create table Customer (
+
+Id Int Primary Key Identity (1,1),
+Code varchar(10) Not null Unique,
+Name varchar(30) not null ,
+Sales Decimal(9,2) not null Default 0,
+Active bit not null default 1,
+Created datetime not null default GetDate()
+);
+
+select * From Customer

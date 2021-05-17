@@ -32,3 +32,6 @@ Insert into Assessments( StudentId, Topic,Score)
 
 	select * from Students
 	select * from Assessments
+
+
+	

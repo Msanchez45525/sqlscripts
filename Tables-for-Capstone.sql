@@ -63,7 +63,7 @@ Quantity Int not null Default 1,);
 
 
 Insert into Users(Username, Password, Firstname, Lastname, Phone, Email, IsReviewer, IsAdmin)
-	Values ('Msanchez', 'qwerty', 'Matt', 'Sanchez', '813-503-8003', 'msanchez@tql.com', 1, 1)
+	--Values ('Msanchez', 'qwerty', 'Matt', 'Sanchez', '813-503-8003', 'msanchez@tql.com', 1, 1)
 		Values   ('GDoud', 'Password1', 'Greg', 'Doud', '513-555-5520', 'GDoud@TQL.com',0,1),
 		   ('BobSmith', 'H7d$235js', 'Bob', 'Smith', '813-555-2257', 'BSmith@gmail.com', 0,0);
 
