@@ -27,7 +27,7 @@ begin
 end
 go
 
-exec AddUser 'xx2', 'xx', 'xx', 'xx', null,null,0,0;
+exec AddUser 'xx5', 'xx', 'xx', 'xx', null,null,0,0;
 
 select* from Users
 /*
@@ -122,7 +122,7 @@ begin
 	if not exists (select 1 from Users where Id =@id)
 	begin
 		print 'Not Found';
-		return -2;
+		return -3;
 		end;
 	update Users set
 		Username = @username,
@@ -138,6 +138,8 @@ begin
 	return 0;
 	end;
 	go
-	exec UpdateUser 7,'sa','sa','System','Admin','911', null, 1,1;
+	exec UpdateUser 1,'sa','sa','System','Admin','911', null, 1,1;
 
 	select * from Users
+
+			
